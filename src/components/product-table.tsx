@@ -61,7 +61,9 @@ export function ProductTable({ dorm }: { dorm: string }) {
             <div className="h-fit overflow-scroll grid gap-8 px-2 py-4">
                 {cart.map((product, index) => {
                     return (
-                        <div className="grid gap-2 shadow p-2">
+                        <div
+                            className="grid gap-2 shadow p-2"
+                            key={product.name}>
                             <ProductDetails {...product} />
 
                             <div className="flex justify-between items-center w-full">
@@ -101,13 +103,50 @@ export function ProductTable({ dorm }: { dorm: string }) {
                                             </Tooltip>
                                         </TooltipProvider>
                                     )}
-
+                                {product.name === "Organization Essentials" &&
+                                    dorm === "chestnut" && (
+                                        <TooltipProvider>
+                                            <Tooltip>
+                                                <TooltipTrigger>
+                                                    <CircleAlert className="w-4 h-4 text-orange-500" />
+                                                </TooltipTrigger>
+                                                <TooltipContent
+                                                    className="flex flex-col gap-1 max-w-xs"
+                                                    side="right">
+                                                    <h1 className="text-center w-full font-bold">
+                                                        Recommended Instead
+                                                    </h1>
+                                                    <ProductDetails
+                                                        {...products[1]}
+                                                    />
+                                                    <Button
+                                                        variant={"secondary"}
+                                                        onClick={() => {
+                                                            const newCart = [
+                                                                ...cart,
+                                                            ];
+                                                            newCart[index] = {
+                                                                ...products[1],
+                                                                quantity:
+                                                                    product.quantity,
+                                                            };
+                                                            setCart(newCart);
+                                                        }}>
+                                                        Add to Cart
+                                                    </Button>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
+                                    )}
                                 <div
                                     className={cn(
                                         "flex gap-2 items-center justify-center mx-auto",
-                                        product.name ===
+                                        (product.name ===
                                             "Basic Bedding Package" &&
-                                            dorm !== "parkside"
+                                            dorm !== "parkside") ||
+                                            (product.name ===
+                                                "Organization Essentials" &&
+                                                dorm === "chestnut")
                                             ? "-left-2.5 relative"
                                             : ""
                                     )}>
@@ -143,7 +182,7 @@ export function ProductTable({ dorm }: { dorm: string }) {
         <Table className="h-fit overflow-scroll">
             <TableHeader>
                 <TableRow>
-                    <TableHead colSpan={2} className="w-fit">
+                    <TableHead colSpan={2} className="">
                         Product
                     </TableHead>
                     <TableHead>Cost</TableHead>
@@ -157,7 +196,7 @@ export function ProductTable({ dorm }: { dorm: string }) {
                     return (
                         <TableRow key={product.name}>
                             <TableCell>
-                                <div className="flex gap-2 items-center">
+                                <div className="flex gap-2 items-center w-24">
                                     <img
                                         src={product.image}
                                         className="h-16 w-16 rounded object-fill"
@@ -190,6 +229,48 @@ export function ProductTable({ dorm }: { dorm: string }) {
                                                                 newCart[index] =
                                                                     {
                                                                         ...products[1],
+                                                                        quantity:
+                                                                            product.quantity,
+                                                                    };
+
+                                                                setCart(
+                                                                    newCart
+                                                                );
+                                                            }}>
+                                                            Add to Cart
+                                                        </Button>
+                                                    </TooltipContent>
+                                                </Tooltip>
+                                            </TooltipProvider>
+                                        )}
+                                    {product.name ===
+                                        "Organization Essentials" &&
+                                        dorm === "chestnut" && (
+                                            <TooltipProvider>
+                                                <Tooltip>
+                                                    <TooltipTrigger>
+                                                        <CircleAlert className="w-4 h-4 text-orange-500" />
+                                                    </TooltipTrigger>
+                                                    <TooltipContent
+                                                        className="flex flex-col gap-1"
+                                                        side="right">
+                                                        <h1 className="text-center w-full font-bold">
+                                                            Recommended Instead
+                                                        </h1>
+                                                        <ProductDetails
+                                                            {...products[9]}
+                                                        />
+                                                        <Button
+                                                            variant={
+                                                                "secondary"
+                                                            }
+                                                            onClick={() => {
+                                                                const newCart =
+                                                                    [...cart];
+
+                                                                newCart[index] =
+                                                                    {
+                                                                        ...products[9],
                                                                         quantity:
                                                                             product.quantity,
                                                                     };

@@ -39,12 +39,12 @@ export default function App() {
                                 </h1>
                             </div>
                             <ProductTable dorm={dorm} />
-                            <div className="grid lg:gap-8 grid-cols-2">
+                            <div className="grid gap-8 lg:gap-8 md:grid-cols-2">
                                 <div className="flex flex-col gap-4">
                                     <DiscountInput />
                                     <SelectDorm dorm={dorm} setDorm={setDorm} />
                                 </div>
-                                <div className="w-3/4 ml-auto">
+                                <div className="md:w-3/4 md:ml-auto">
                                     <TotalDetails />
                                 </div>
                             </div>
