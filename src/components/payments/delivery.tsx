@@ -90,7 +90,7 @@ export default function DeliveryForm({ nextTab }: DeliveryFormProps) {
                         />
 
                         <div className="flex flex-col gap-4">
-                            <div className="grid gap-4 grid-cols-2">
+                            <div className="grid gap-2 grid-cols-2">
                                 <FormField
                                     control={form.control}
                                     name="firstName"
@@ -176,7 +176,7 @@ export default function DeliveryForm({ nextTab }: DeliveryFormProps) {
                                     </FormItem>
                                 )}
                             />
-                            <div className="grid gap-4 grid-cols-3">
+                            <div className="grid gap-2 2xl:grid-cols-3">
                                 <FormField
                                     control={form.control}
                                     name="address.country"
@@ -220,9 +220,6 @@ export default function DeliveryForm({ nextTab }: DeliveryFormProps) {
                             </div>
                         </div>
                     </CardContent>
-                    {/* <CardFooter>
-                    <Button>Submit</Button>
-                </CardFooter> */}
                 </Card>
                 <div className={"flex gap-4"}>
                     <Button className="flex-auto"> Next </Button>

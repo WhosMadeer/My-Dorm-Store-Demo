@@ -24,7 +24,7 @@ export default function App() {
             <div className="w-dvw h-dvh overflow-y-scroll">
                 <NavBar />
                 <CheckoutLayout>
-                    <div className="p-4 lg:mt-16 lg:pr-8 flex flex-col gap-16">
+                    <div className="p-4 lg:mt-12 lg:pr-8 flex flex-col gap-16">
                         <div className="w-fit flex gap-4 items-center">
                             <Button variant={"outline"} size={"icon"}>
                                 <ChevronLeft />
@@ -35,7 +35,7 @@ export default function App() {
                             </h1>
                         </div>
                         <ProductTable />
-                        <div className="grid gap-8 grid-cols-2">
+                        <div className="grid lg:gap-8 grid-cols-2">
                             <div className="flex flex-col gap-4">
                                 <DiscountInput />
                                 <SelectDorm />
@@ -46,7 +46,7 @@ export default function App() {
                         </div>
 
                         <div className="w-full gap-4">
-                            <h1 className="text-lg font-semibold">
+                            <h1 className="md:text-lg font-semibold">
                                 Recommended Product For Your Residence
                             </h1>
                             <RecommendedProducts>
@@ -63,7 +63,7 @@ export default function App() {
                             </RecommendedProducts>
                         </div>
                     </div>
-                    <div className="p-4 lg:pl-8 lg:mt-32 w-full">
+                    <div className="p-4 lg:pl-8 lg:mt-24 w-full">
                         <PaymentLayout />
                     </div>
                 </CheckoutLayout>

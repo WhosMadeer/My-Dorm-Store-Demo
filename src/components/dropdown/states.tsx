@@ -61,14 +61,14 @@ const StateDropdown = () => {
                             </span>
                         </div>
                     ) : (
-                        <span>Select State...</span>
+                        <span>Select State</span>
                     )}
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                 </Button>
             </PopoverTrigger>
             <PopoverContent className="w-max p-0">
                 <Command>
-                    <CommandInput placeholder="Search state..." />
+                    <CommandInput placeholder="Search state" />
                     <CommandEmpty>No state found.</CommandEmpty>
                     <CommandGroup>
                         <ScrollArea className="max-h-[300px]">

@@ -21,6 +21,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "./ui/tooltip";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function ProductTable() {
     // const cart = useCartStore((state) => state.cart);
@@ -52,11 +53,52 @@ export function ProductTable() {
         setCart(cart.filter((item) => item !== product));
     };
 
+    const isMobile = useIsMobile();
+
+    console.log(isMobile);
+
+    if (isMobile) {
+        return (
+            <div className="h-fit overflow-scroll grid gap-8 px-2 py-4">
+                {cart.map((product) => {
+                    return (
+                        <div className="grid gap-2 shadow p-2">
+                            <ProductDetails {...product} />
+                            <div className="flex gap-2 items-center place-self-center">
+                                <Button
+                                    variant={"outline"}
+                                    size={"icon"}
+                                    onClick={() => {
+                                        reduceQuantity(product);
+                                    }}
+                                    disabled={product.quantity === 1}>
+                                    <Minus />
+                                </Button>
+                                <span className="w-4 text-center">
+                                    {product.quantity}
+                                </span>
+                                <Button
+                                    variant={"outline"}
+                                    size={"icon"}
+                                    onClick={() => {
+                                        increaseQuantity(product);
+                                    }}>
+                                    <Plus />
+                                </Button>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    }
     return (
         <Table className="h-fit overflow-scroll">
             <TableHeader>
                 <TableRow>
-                    <TableHead colSpan={2}>Product</TableHead>
+                    <TableHead colSpan={2} className="w-fit">
+                        Product
+                    </TableHead>
                     <TableHead>Cost</TableHead>
                     <TableHead>Quantity</TableHead>
                     <TableHead>Total Cost</TableHead>
@@ -71,7 +113,7 @@ export function ProductTable() {
                                 <div className="flex gap-2 items-center">
                                     <img
                                         src={product.image}
-                                        className="object-cover h-16 rounded"
+                                        className="h-16 w-16 rounded object-fill"
                                     />
                                     <TooltipProvider>
                                         <Tooltip>
@@ -140,7 +182,7 @@ export function ProductTable() {
                                     )}
                                 </span>
                             </TableCell>
-                            <TableCell>
+                            <TableCell className="grid w-full h-full place-items-center">
                                 <X
                                     className="w-4 h-4"
                                     onClick={() => {

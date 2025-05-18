@@ -9,7 +9,7 @@ export function DiscountInput() {
     return (
         <div className="w-full items-center gap-2 grid">
             <Label>Discount code or gift card</Label>
-            <div className="flex gap-2">
+            <div className="grid lg:flex gap-2">
                 <Input
                     placeholder=""
                     value={input}

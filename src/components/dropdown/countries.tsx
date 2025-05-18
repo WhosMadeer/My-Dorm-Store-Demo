@@ -74,7 +74,7 @@ const CountryDropdown = ({ disabled }: CountryDropdownProps) => {
                                 </span>
                             </div>
                         ) : (
-                            <span>Select Country...</span>
+                            <span>Select Country</span>
                         )}
                     </span>
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -82,7 +82,7 @@ const CountryDropdown = ({ disabled }: CountryDropdownProps) => {
             </PopoverTrigger>
             <PopoverContent className="w-max p-0">
                 <Command>
-                    <CommandInput placeholder="Search country..." />
+                    <CommandInput placeholder="Search country" />
                     <CommandList>
                         <CommandEmpty>No country found.</CommandEmpty>
                         <CommandGroup>
