@@ -47,7 +47,7 @@ export function ProductDetailsCard(product: ProductsType) {
                 </div>
             </CardContent>
             <CardFooter className="flex gap-2 justify-end">
-                <span>${product.cost.toFixed(2)}</span>
+                <span className="font-medium">${product.cost.toFixed(2)}</span>
                 <Button
                     variant={"secondary"}
                     size={"icon"}

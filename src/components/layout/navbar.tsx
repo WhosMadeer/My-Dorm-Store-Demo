@@ -11,7 +11,7 @@ export default function NavBar() {
             <NavigationMenuList className="w-screen">
                 <NavigationMenuItem>
                     <NavigationMenuLink>
-                        <img src="public/Logo.png" className="h-8" />
+                        <img src="/Logo.png" className="h-8" />
                     </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>

@@ -1,3 +1,4 @@
+import { dormSelectList } from "@/data/residence";
 import { Label } from "./ui/label";
 import {
     Select,
@@ -7,18 +8,27 @@ import {
     SelectValue,
 } from "./ui/select";
 
-export function SelectDorm() {
+interface SelectDormProps {
+    dorm: string;
+    setDorm: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export function SelectDorm({ dorm, setDorm }: SelectDormProps) {
     return (
         <div className="grid gap-2">
             <Label>What residence are you staying in?</Label>
-            <Select>
+            <Select onValueChange={setDorm} value={dorm}>
                 <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Theme" />
+                    <SelectValue placeholder="Choose Dorm..." />
                 </SelectTrigger>
                 <SelectContent>
-                    <SelectItem value="light">Light</SelectItem>
-                    <SelectItem value="dark">Dark</SelectItem>
-                    <SelectItem value="system">System</SelectItem>
+                    {dormSelectList.map((dorm) => {
+                        return (
+                            <SelectItem key={dorm.key} value={dorm.key}>
+                                {dorm.label}
+                            </SelectItem>
+                        );
+                    })}
                 </SelectContent>
             </Select>
         </div>

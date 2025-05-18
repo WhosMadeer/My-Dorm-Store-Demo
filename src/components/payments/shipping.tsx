@@ -25,6 +25,7 @@ import {
     TableHeader,
     TableRow,
 } from "../ui/table";
+import { useShippingContext } from "@/context/shippingContext";
 
 // rates form for checkout
 
@@ -64,12 +65,16 @@ export default function ShippingForm({ prevTab, nextTab }: ShippingFormProps) {
         defaultValues: shipping,
     });
 
+    const { setShippingCost } = useShippingContext();
+
     const addRate = (rate: Rates) => {
         const { service, cost, transitTime } = rate;
 
         form.setValue("cost", cost);
         form.setValue("service", service);
         form.setValue("transitTime", transitTime);
+
+        setShippingCost(cost);
         setSelectedRate(service);
     };
 
@@ -113,11 +118,12 @@ export default function ShippingForm({ prevTab, nextTab }: ShippingFormProps) {
                                         <TableRow
                                             key={service}
                                             onClick={() => addRate(rate)}
-                                            className={
+                                            className={cn(
+                                                "hover:cursor-pointer",
                                                 selectedRate === service
                                                     ? "font-semibold"
                                                     : ""
-                                            }>
+                                            )}>
                                             <TableCell>{service}</TableCell>
                                             <TableCell>{cost}</TableCell>
                                             <TableCell>

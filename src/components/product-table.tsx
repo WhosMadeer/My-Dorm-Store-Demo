@@ -55,8 +55,6 @@ export function ProductTable() {
 
     const isMobile = useIsMobile();
 
-    console.log(isMobile);
-
     if (isMobile) {
         return (
             <div className="h-fit overflow-scroll grid gap-8 px-2 py-4">
@@ -126,7 +124,9 @@ export function ProductTable() {
                                                 <h1 className="text-center w-full font-bold">
                                                     Recommended Instead
                                                 </h1>
-                                                <ProductDetails {...cart[1]} />
+                                                <ProductDetails
+                                                    {...products[1]}
+                                                />
                                                 <Button variant={"secondary"}>
                                                     Add to Cart
                                                 </Button>

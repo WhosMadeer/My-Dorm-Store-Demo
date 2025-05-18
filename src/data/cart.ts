@@ -3,11 +3,11 @@ import { products } from "./products";
 
 export const cart: CartDetailsType[] = [
     {
-        ...products[0],
+        ...products[7],
         quantity: 1,
     },
     {
-        ...products[1],
+        ...products[4],
         quantity: 2,
     },
 ];

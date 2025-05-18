@@ -1,3 +1,4 @@
+import { dorm } from "@/data/residence";
 import type { ReactNode } from "react";
 
 export interface ProductsType {
@@ -6,6 +7,7 @@ export interface ProductsType {
     description?: string;
     size?: string;
     image?: string; // filename to product
+    dorm?: dorm[];
 }
 
 export interface CartDetailsType extends ProductsType {
