@@ -13,7 +13,7 @@ export const products: ProductsType[] = [
         cost: 149.95,
         image: "/product-photos/full-bedding-package.jpeg",
         description: "Twin size. Blue Comforter",
-        dorm: ["campusOne", "chestnut", "parkside"],
+        dorm: ["campusOne", "chestnut"],
     },
     {
         name: "Exam & Midterm Care Package",
@@ -27,11 +27,13 @@ export const products: ProductsType[] = [
         cost: 44.99,
         image: "/product-photos/laundry-essentials.jpeg",
         description: "Blue Laundry Hamper and Large Washing Basket",
+        dorm: ["chestnut"],
     },
     {
         name: "Tech Essentials",
         cost: 29.99,
         image: "/product-photos/tech-essentials.jpeg",
+        dorm: ["campusOne", "parkside"],
     },
     {
         name: "Birthday Care Package",

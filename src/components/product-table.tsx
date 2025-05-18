@@ -66,7 +66,8 @@ export function ProductTable({ dorm }: { dorm: string }) {
 
                             <div className="flex justify-between items-center w-full">
                                 {product.name === "Basic Bedding Package" &&
-                                    dorm !== "parkside" && (
+                                    dorm !== "parkside" &&
+                                    dorm !== "" && (
                                         <TooltipProvider>
                                             <Tooltip>
                                                 <TooltipTrigger>
@@ -162,7 +163,8 @@ export function ProductTable({ dorm }: { dorm: string }) {
                                         className="h-16 w-16 rounded object-fill"
                                     />
                                     {product.name === "Basic Bedding Package" &&
-                                        dorm !== "parkside" && (
+                                        dorm !== "parkside" &&
+                                        dorm !== "" && (
                                             <TooltipProvider>
                                                 <Tooltip>
                                                     <TooltipTrigger>
