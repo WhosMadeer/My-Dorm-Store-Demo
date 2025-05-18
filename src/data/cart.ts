@@ -3,7 +3,7 @@ import { products } from "./products";
 
 export const cart: CartDetailsType[] = [
     {
-        ...products[7],
+        ...products[0],
         quantity: 1,
     },
     {

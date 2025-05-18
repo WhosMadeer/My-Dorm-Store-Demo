@@ -15,6 +15,7 @@ export const deliveryFormSchema = z.object({
     lastName: z.string(),
     address: addressSchema,
     phoneNumber: z.string(),
+    moveInDate: z.string().optional(),
 });
 
 export type DeliveryFormSchemaType = z.infer<typeof deliveryFormSchema>;

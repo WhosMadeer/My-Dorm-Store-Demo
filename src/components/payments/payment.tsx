@@ -56,8 +56,7 @@ export default function PaymentForm({ prevTab }: PaymentFormProps) {
                     <CardHeader>
                         <CardTitle>Shipping Service</CardTitle>
                         <CardDescription>
-                            Make changes to your account here. Click save when
-                            you're done.
+                            Fill out your card details and click Pay Now
                         </CardDescription>
                     </CardHeader>
 

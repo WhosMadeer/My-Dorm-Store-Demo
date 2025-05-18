@@ -93,8 +93,7 @@ export default function ShippingForm({ prevTab, nextTab }: ShippingFormProps) {
                     <CardHeader>
                         <CardTitle>Shipping Service</CardTitle>
                         <CardDescription>
-                            Make changes to your account here. Click save when
-                            you're done.
+                            Choose the rate that you want to use for shipping
                         </CardDescription>
                     </CardHeader>
 

@@ -38,7 +38,7 @@ export default function App() {
                                     Shopping Cart
                                 </h1>
                             </div>
-                            <ProductTable />
+                            <ProductTable dorm={dorm} />
                             <div className="grid lg:gap-8 grid-cols-2">
                                 <div className="flex flex-col gap-4">
                                     <DiscountInput />

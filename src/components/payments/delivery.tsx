@@ -27,6 +27,7 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { useFormStore } from "@/core/form";
+import { Separator } from "../ui/separator";
 
 // delivery form for checkout
 
@@ -68,8 +69,8 @@ export default function DeliveryForm({ nextTab }: DeliveryFormProps) {
                     <CardHeader>
                         <CardTitle>Delivery Details</CardTitle>
                         <CardDescription>
-                            Make changes to your account here. Click save when
-                            you're done.
+                            Fill your delivery details for the residence you're
+                            staying at.
                         </CardDescription>
                     </CardHeader>
 
@@ -134,6 +135,24 @@ export default function DeliveryForm({ nextTab }: DeliveryFormProps) {
                                     </FormItem>
                                 )}
                             />
+                            <FormField
+                                control={form.control}
+                                name="moveInDate"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            Move-in Date (Optional)
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input {...field} />
+                                        </FormControl>
+
+                                        <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+
+                            <Separator />
                             <FormField
                                 control={form.control}
                                 name="address.street"
