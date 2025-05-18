@@ -22,6 +22,10 @@ This is a demo interactive checkout page for **My Dorm Store** built with _React
     -   Clearly guided steps from cart to payment
     -   Shipment details (shipping & billing) collected **before** payment entry
 
+-   ✅ **Responsive Design**
+
+    -   Design works with different screen sizes from mobile to desktop
+
 ---
 
 ## 🧩 Tech Stack
