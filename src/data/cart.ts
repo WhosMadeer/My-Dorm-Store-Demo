@@ -1,18 +1,13 @@
 import type { CartDetailsType } from "@/types/types";
+import { products } from "./products";
 
 export const cart: CartDetailsType[] = [
     {
-        name: "Basic Bedding Package",
-        description: "gray",
-        cost: 99.95,
-        image: "src/data/product-photos/basic-bedding-package.jpeg",
+        ...products[0],
         quantity: 1,
     },
     {
-        name: "Standard Bedding Package",
-        description: "blue",
-        cost: 149.95,
-        image: "src/data/product-photos/full-bedding-package.jpeg",
+        ...products[1],
         quantity: 2,
     },
 ];

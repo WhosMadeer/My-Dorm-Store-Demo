@@ -13,6 +13,7 @@ import type { CartDetailsType } from "./types/types";
 import { RecommendedProducts } from "./components/recommended-products";
 import { DiscountInput } from "./components/discount-input";
 import { SelectDorm } from "./components/select-dorm";
+import NavBar from "./components/layout/navbar";
 
 export default function App() {
     const [cart, setCart] = useState<CartDetailsType[]>(cartData);
@@ -20,9 +21,10 @@ export default function App() {
 
     return (
         <CartContextProvider value={{ cart, setCart }}>
-            <div className="w-screen h-screen">
+            <div className="w-dvw h-dvh overflow-y-scroll">
+                <NavBar />
                 <CheckoutLayout>
-                    <div className="p-4 pt-16 flex flex-col gap-16">
+                    <div className="p-4 lg:mt-16 lg:pr-8 flex flex-col gap-16">
                         <div className="w-fit flex gap-4 items-center">
                             <Button variant={"outline"} size={"icon"}>
                                 <ChevronLeft />
@@ -50,18 +52,18 @@ export default function App() {
                             <RecommendedProducts>
                                 <ProductDetailsCard {...products[0]} />
                                 <ProductDetailsCard {...products[1]} />
+                                <ProductDetailsCard {...products[2]} />
+                                <ProductDetailsCard {...products[3]} />
+                                <ProductDetailsCard {...products[4]} />
+                                <ProductDetailsCard {...products[5]} />
+                                {/* <ProductDetailsCard {...products[1]} />
                                 <ProductDetailsCard {...products[0]} />
                                 <ProductDetailsCard {...products[1]} />
-                                <ProductDetailsCard {...products[1]} />
-                                <ProductDetailsCard {...products[0]} />
-                                <ProductDetailsCard {...products[1]} />
-                                <ProductDetailsCard {...products[0]} />
-                                <ProductDetailsCard {...products[1]} />
-                                <ProductDetailsCard {...products[0]} />
+                                <ProductDetailsCard {...products[0]} /> */}
                             </RecommendedProducts>
                         </div>
                     </div>
-                    <div className="bg-gray-200 p-4 pt-16 ">
+                    <div className="p-4 lg:pl-8 lg:mt-32 w-full">
                         <PaymentLayout />
                     </div>
                 </CheckoutLayout>

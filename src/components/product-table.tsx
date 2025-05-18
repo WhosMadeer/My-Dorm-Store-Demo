@@ -53,7 +53,7 @@ export function ProductTable() {
     };
 
     return (
-        <Table className="h-fit">
+        <Table className="h-fit overflow-scroll">
             <TableHeader>
                 <TableRow>
                     <TableHead colSpan={2}>Product</TableHead>

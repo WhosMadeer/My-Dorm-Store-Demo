@@ -36,7 +36,7 @@ export function ProductDetailsCard(product: ProductsType) {
     };
     return (
         <Card className="min-w-52">
-            <CardContent>
+            <CardContent className="h-full">
                 <img
                     src={product.image}
                     className="object-cover w-48 rounded"
@@ -47,7 +47,7 @@ export function ProductDetailsCard(product: ProductsType) {
                 </div>
             </CardContent>
             <CardFooter className="flex gap-2 justify-end">
-                <span>${product.cost}</span>
+                <span>${product.cost.toFixed(2)}</span>
                 <Button
                     variant={"secondary"}
                     size={"icon"}

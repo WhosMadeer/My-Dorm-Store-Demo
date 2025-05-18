@@ -1,26 +1,18 @@
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Button } from "../ui/button";
-import DeliveryForm from "../payments/delivery";
-import ShippingForm from "../payments/shipping";
 import { useFormStore } from "@/core/form";
+import { useState } from "react";
+import DeliveryForm from "../payments/delivery";
 import PaymentForm from "../payments/payment";
+import ShippingForm from "../payments/shipping";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 // The payment component is used to change the tabs shown for payment
-
-// type TabNames = "Delivery" | "Shipping" | "Payment";
 
 const tabArray = ["Delivery", "Shipping", "Payment"];
 type TabNames = (typeof tabArray)[number];
 
 export default function PaymentLayout() {
-    const [currentTab, setCurrentTab] = useState<TabNames>("Shipping");
-    const [index, setIndex] = useState(1);
-
-    // const handleCurrentTab = (tab: string) => {
-    //     setCurrentTab(tab as TabNames);
-    //     setIndex(tabArray.findIndex((value) => value === tab));
-    // };
+    const [currentTab, setCurrentTab] = useState<TabNames>("Delivery");
+    const [index, setIndex] = useState(0);
 
     const nextTab = () => {
         setIndex(index + 1);
@@ -41,23 +33,21 @@ export default function PaymentLayout() {
     const shipping = useFormStore((state) => state.shipping);
     const payment = useFormStore((state) => state.payment);
 
-    console.log(payment);
-
     return (
-        <div className="grid gap-2">
+        <div className="grid gap-2 shadow-2xl p-4 rounded-xl">
             <Tabs
                 value={currentTab}
                 // onValueChange={handleCurrentTab}
                 className="w-full">
                 <TabsList className="w-full">
-                    <TabsTrigger value={"Delivery"}>Delivery</TabsTrigger>
+                    <TabsTrigger value={"Delivery"}>1. Delivery</TabsTrigger>
                     <TabsTrigger
                         value={"Shipping"}
                         disabled={!shipping.service}>
-                        Shipping
+                        2. Shipping
                     </TabsTrigger>
                     <TabsTrigger value={"Payment"} disabled={!payment.name}>
-                        Payment
+                        3. Payment
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="Delivery">
